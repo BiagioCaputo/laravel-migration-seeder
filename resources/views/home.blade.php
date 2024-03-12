@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Ciuf ciuf</title>
 
@@ -21,7 +22,7 @@
                 <th scope="col">Train Code</th>
                 <th scope="col">Company</th>
                 <th scope="col">Departure St.</th>
-                <th scope="col">Ariival St.</th>
+                <th scope="col">Arrival St.</th>
                 <th scope="col">Departure Time</th>
                 <th scope="col">Arrival time</th>
                 <th scope="col">Wagons Number</th>
@@ -33,15 +34,14 @@
             @forelse ($trains as $train)
               <tr>
                 <th scope="row">{{ $train->train_code}}</th>
-                <td>{{ $train->train_code}}</td>
                 <td>{{ $train->company}}</td>
                 <td>{{ $train->dep_station}}</td>
                 <td>{{ $train->arr_station}}</td>
                 <td>{{ $train->dep_time}}</td>
                 <td>{{ $train->arr_time}}</td>
                 <td>{{ $train->train_wagons}}</td>
-                <td>{{ $train->on_time}}</td>
-                <td>{{ $train->deleted}}</td>
+                <td>{{ $train->getTimeIcon()}}</td>
+                <td>{{ $train->getDeletedIcon()}}</td>
               </tr>
               @empty
                 <th>Nessun treno</th>
