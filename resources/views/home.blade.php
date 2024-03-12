@@ -14,6 +14,13 @@
 </head>
 
 <body>
+    <ul>
+        @forelse ($trains as $train)
+            <li>{{$train->company}}</li>
+        @empty
+            <h1>Nessun treno</h1>
+        @endforelse
+    </ul>
 
 
 </body>
